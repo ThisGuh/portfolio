@@ -13,4 +13,10 @@ export const defaultTheme: DefaultTheme = {
     big: '1.8rem',
     large: '2.5rem',
   },
+  screenSizes: {
+    mobile: '(min-width: 320px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1280px)',
+    bigDesktop: '(min-width: 1600px)',
+  },
 }

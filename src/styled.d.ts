@@ -14,5 +14,11 @@ declare module 'styled-components' {
       big: string
       large: string
     }
+    screenSizes: {
+      mobile: string
+      tablet: string
+      desktop: string
+      bigDesktop: string
+    }
   }
 }
