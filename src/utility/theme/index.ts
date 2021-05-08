@@ -8,10 +8,12 @@ export const defaultTheme: DefaultTheme = {
     gray: '#78748f',
   },
   fontSizes: {
-    small: '1.2rem',
-    medium: '1.5rem',
-    big: '1.8rem',
-    large: '2.5rem',
+    small: '1.3rem',
+    normal: '1.5rem',
+    medium: '1.8rem',
+    big: '2.3rem',
+    veryBig: '3rem',
+    large: '6rem',
   },
   screenSizes: {
     mobile: '(min-width: 320px)',

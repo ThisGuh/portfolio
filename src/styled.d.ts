@@ -10,8 +10,10 @@ declare module 'styled-components' {
     }
     fontSizes: {
       small: string
+      normal: string
       medium: string
       big: string
+      veryBig: string
       large: string
     }
     screenSizes: {
