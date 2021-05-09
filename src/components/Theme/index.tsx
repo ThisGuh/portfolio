@@ -4,14 +4,14 @@ import { defaultTheme } from 'utility/theme'
 import { normalize } from 'utility/normalize'
 import { defaultStyle } from 'utility/default-style'
 
-interface Props {
-  children?: React.ReactNode
-}
-
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   ${defaultStyle}
 `
+
+interface Props {
+  children?: React.ReactNode
+}
 
 function Theme({ children }: Props) {
   return (

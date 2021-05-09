@@ -13,7 +13,7 @@ declare module 'styled-components' {
       normal: string
       medium: string
       big: string
-      veryBig: string
+      mobileLarge: string
       large: string
     }
     screenSizes: {
