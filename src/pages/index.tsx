@@ -1,5 +1,13 @@
-import React from "react"
+import React from 'react'
+import Hero from 'components/Hero'
+import Theme from 'components/Theme'
 
-export default function Home() {
-  return <div>Hello world!</div>
+function Home() {
+  return (
+    <Theme>
+      <Hero />
+    </Theme>
+  )
 }
+
+export default Home
