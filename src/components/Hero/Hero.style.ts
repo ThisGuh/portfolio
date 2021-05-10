@@ -16,6 +16,7 @@ export const HeroContainer = styled.section`
 export const HeroHeader = styled.header`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 
 export const HeroH1 = styled.h1`
@@ -24,6 +25,7 @@ export const HeroH1 = styled.h1`
   line-height: 175%;
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.mobileLarge};
+  text-align: center;
   color: ${({ theme }) => theme.colors.darkPurple};
   font-weight: bold;
   letter-spacing: 3px;
@@ -60,4 +62,27 @@ export const HeroIconContainer = styled.section`
   position: absolute;
   bottom: 40px;
   right: 50px;
+`
+
+export const HeroNav = styled.nav`
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 100px;
+
+  @media (${({ theme }) => theme.screenSizes.desktop}) {
+    display: block;
+  }
+`
+
+export const HeroNavList = styled.ul`
+  display: flex;
+  list-style: none;
+`
+
+export const HeroNavListItem = styled.li`
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  color: ${({ theme }) => theme.colors.gray};
+  cursor: pointer;
+  margin: 0 25px;
 `
