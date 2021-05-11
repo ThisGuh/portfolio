@@ -8,7 +8,7 @@ export const HeroContainer = styled.section`
   align-items: center;
   justify-items: center;
 
-  @media (${({ theme }) => theme.screenSizes.tablet}) {
+  @media ${({ theme }) => theme.screenSizes.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
 `
@@ -30,7 +30,7 @@ export const HeroH1 = styled.h1`
   font-weight: bold;
   letter-spacing: 3px;
 
-  @media (${({ theme }) => theme.screenSizes.desktop}) {
+  @media ${({ theme }) => theme.screenSizes.desktop} {
     font-size: ${({ theme }) => theme.fontSizes.large};
   }
 `
@@ -47,7 +47,7 @@ export const HeroCircle = styled.svg`
   background-color: ${({ theme }) => theme.colors.lightPurple};
   clip-path: circle(79.6% at 99% 99%);
 
-  @media (${({ theme }) => theme.screenSizes.desktop}) {
+  @media ${({ theme }) => theme.screenSizes.desktop} {
     width: 600px;
     height: 600px;
     clip-path: circle(76.1% at 79% 86%);
@@ -70,7 +70,7 @@ export const HeroNav = styled.nav`
   top: 30px;
   right: 100px;
 
-  @media (${({ theme }) => theme.screenSizes.desktop}) {
+  @media ${({ theme }) => theme.screenSizes.desktop} {
     display: block;
   }
 `

@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (${({ theme }) => theme.screenSizes.desktop}) {
+  @media ${({ theme }) => theme.screenSizes.desktop} {
     width: 130px;
     height: 50px;
     padding: 8px;
