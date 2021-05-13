@@ -39,6 +39,7 @@ export const HeroDesc = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.medium};
   color: ${({ theme }) => theme.colors.gray};
 `
+
 export const HeroCircle = styled.svg`
   width: 300px;
   height: 250px;
@@ -82,7 +83,7 @@ export const HeroNavList = styled.ul`
 
 export const HeroNavListItem = styled.li`
   font-size: ${({ theme }) => theme.fontSizes.medium};
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.darkPurple};
   cursor: pointer;
   margin: 0 25px;
 `
