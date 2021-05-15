@@ -1,17 +1,28 @@
+## Work in progress
+
+[Live](https://thisguh.github.io/portfolio/)
+
 ## Getting started
 
 ```bash
 
-git clone https://github.com/ThisGuh/gatsby-boilerplate.git
+
+
+git clone https://github.com/ThisGuh/portfolio.git && npm start
+
+
 
 ```
 
 ## Technologies
 
-- gatsby
-- react
-- typescript
-- eslint
+- Gatsby
+
+- React
+
+- TypeScript
+
+- Styled Components
 
 ## License
 
