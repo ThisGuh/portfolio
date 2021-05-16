@@ -11,6 +11,7 @@ export const ABOUT_DESC = [
   `Dużą uwagę przykładam do ciągłego rozwoju, aby nie spocząć na laurach.
 `,
 ]
+export const PORTFOLIO_TAG = 'to-portfolio'
 //links
 export const GITHUB_LINK = 'https://github.com/ThisGuh'
 export const LINKEDIN_LINK = 'https://www.linkedin.com/in/damian-gluch/'
