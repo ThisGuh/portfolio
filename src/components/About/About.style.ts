@@ -35,7 +35,11 @@ export const TechnologiesContainer = styled.section`
   }
 `
 
-export const TechnologiesH2 = styled.h2`
-  color: ${({ theme }) => theme.colors.darkPurple};
-  font-size: ${({ theme }) => theme.fontSizes.big};
+export const ProjectsContainer = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media ${({ theme }) => theme.screenSizes.desktop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
