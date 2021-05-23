@@ -8,13 +8,6 @@ export interface ReposQuery {
             url: string
             createdAt: string
             description: string
-            languages: {
-              nodes: [
-                {
-                  name: string
-                }
-              ]
-            }
             repositoryTopics: {
               nodes: [
                 {
