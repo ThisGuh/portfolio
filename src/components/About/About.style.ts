@@ -43,3 +43,23 @@ export const ProjectsContainer = styled.section`
     grid-template-columns: repeat(4, 1fr);
   }
 `
+
+export const ProjectContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 3px;
+  background-color: ${({ theme }) => theme.colors.lightPurple};
+  cursor: pointer;
+  transition: 1s;
+
+  > * {
+    padding: 5px;
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
+  }
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.darkPurple};
+  }
+`

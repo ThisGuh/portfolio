@@ -6,8 +6,8 @@ import {
   TechnologiesContainer,
   ProjectsContainer,
 } from 'components/About/About.style'
-import { ABOUT_DESC, PORTFOLIO_TAG } from 'utility/constants'
-import { useReposData } from 'hooks'
+import Projects from 'components/About/Projects'
+import { ABOUT_DESC } from 'utility/constants'
 import CSSIcon from 'icons/css3.svg'
 import HTMLIcon from 'icons/html5.svg'
 import JSIcon from 'icons/javascript.svg'
@@ -17,18 +17,6 @@ import GatsbyIcon from 'icons/gatsby.svg'
 import SassIcon from 'icons/sass.svg'
 import StyledComponentsIcon from 'icons/styled-components.svg'
 import GitIcon from 'icons/git.svg'
-
-function Project() {
-  const { nodes } = useReposData()
-  const projects: Array<Object> = []
-  nodes.forEach(project => {
-    project.repositoryTopics.nodes.forEach(item => {
-      if (item.topic.name.includes(PORTFOLIO_TAG)) {
-        projects.push(project)
-      }
-    })
-  })
-}
 
 function About() {
   return (
@@ -52,7 +40,9 @@ function About() {
         <GitIcon />
       </TechnologiesContainer>
       <AboutH2>Projekty</AboutH2>
-      <ProjectsContainer></ProjectsContainer>
+      <ProjectsContainer>
+        <Projects />
+      </ProjectsContainer>
     </AboutContainer>
   )
 }
