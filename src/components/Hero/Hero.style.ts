@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HeroContainer = styled.section`
-  height: 100vh;
   display: grid;
   position: relative;
   grid-template-columns: 1fr;

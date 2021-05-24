@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { window } from 'browser-monads-ts'
 import {
   HeroContainer,
   HeroHeader,
@@ -23,8 +24,20 @@ import GithubIcon from 'icons/github.svg'
 import LinkedinIcon from 'icons/linkedin.svg'
 
 function Hero() {
+  const [heroHeight, setHeroHeight] = useState(0)
+
+  useEffect(() => {
+    const updateHeroHeight = () => {
+      setHeroHeight(window.innerHeight)
+    }
+    updateHeroHeight()
+    window.addEventListener('resize', updateHeroHeight)
+
+    return () => window.removeEventListener('resize', updateHeroHeight)
+  }, [])
+
   return (
-    <HeroContainer>
+    <HeroContainer style={{ height: heroHeight }}>
       <HeroHeader>
         <HeroH1>{HERO_H1_CONTENT}</HeroH1>
         <HeroDesc>{HERO_DESC}</HeroDesc>
