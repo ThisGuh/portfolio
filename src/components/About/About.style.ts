@@ -38,6 +38,7 @@ export const TechnologiesContainer = styled.section`
 export const ProjectsContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr;
+  gap: 30px;
 
   @media ${({ theme }) => theme.screenSizes.desktop} {
     grid-template-columns: repeat(4, 1fr);
