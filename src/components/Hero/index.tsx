@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { window } from 'browser-monads-ts'
+import { Link } from 'react-scroll'
 import {
   HeroContainer,
   HeroHeader,
@@ -41,12 +42,16 @@ function Hero() {
       <HeroHeader>
         <HeroH1>{HERO_H1_CONTENT}</HeroH1>
         <HeroDesc>{HERO_DESC}</HeroDesc>
-        <Button text={HERO_BUTTON_CONTENT} />
+        <Link to="Kontakt" spy smooth>
+          <Button text={HERO_BUTTON_CONTENT} />
+        </Link>
       </HeroHeader>
       <HeroNav>
         <HeroNavList>
           {HERO_NAV_CONTENT.map(item => (
-            <HeroNavListItem key={item}>{item}</HeroNavListItem>
+            <Link to={item} key={item} spy smooth>
+              <HeroNavListItem>{item}</HeroNavListItem>
+            </Link>
           ))}
         </HeroNavList>
       </HeroNav>

@@ -20,7 +20,7 @@ import GitIcon from 'icons/git.svg'
 
 function About() {
   return (
-    <AboutContainer>
+    <AboutContainer id="O mnie">
       <AboutH2>O mnie</AboutH2>
       <AboutDescription>
         {ABOUT_DESC.map(item => (
@@ -39,7 +39,7 @@ function About() {
         <StyledComponentsIcon />
         <GitIcon />
       </TechnologiesContainer>
-      <AboutH2>Projekty</AboutH2>
+      <AboutH2 id="Projekty">Projekty</AboutH2>
       <ProjectsContainer>
         <Projects />
       </ProjectsContainer>

@@ -15,3 +15,5 @@ export const PORTFOLIO_TAG = 'to-portfolio'
 //links
 export const GITHUB_LINK = 'https://github.com/ThisGuh'
 export const LINKEDIN_LINK = 'https://www.linkedin.com/in/damian-gluch/'
+//contact
+export const EMAIL = 'damiangluch01@gmail.com'
