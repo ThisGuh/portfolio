@@ -5,7 +5,9 @@ export const defaultTheme: DefaultTheme = {
     white: '#ffffff',
     darkPurple: '#120845',
     lightPurple: '#7562e0',
-    gray: '#78748f',
+    gray: '#686380',
+    lightGray: '#F7F7F7',
+    red: '#d41a0d',
   },
   fontSizes: {
     small: '1.4rem',

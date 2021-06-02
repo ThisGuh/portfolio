@@ -7,6 +7,8 @@ declare module 'styled-components' {
       darkPurple: string
       lightPurple: string
       gray: string
+      lightGray: string
+      red: string
     }
     fontSizes: {
       small: string

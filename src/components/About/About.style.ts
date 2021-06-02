@@ -4,6 +4,7 @@ export const AboutContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
 `
 export const AboutH2 = styled.h2`
