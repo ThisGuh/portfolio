@@ -96,7 +96,7 @@ function ContactForm() {
             resetForm()
           })
           .catch(() => {
-            toast.info('Błąd: wiadomość nie została wysłana', {
+            toast.error('Błąd: wiadomość nie została wysłana', {
               position: 'bottom-right',
               autoClose: 2500,
               hideProgressBar: false,
