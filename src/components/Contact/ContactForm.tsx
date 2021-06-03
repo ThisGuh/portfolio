@@ -20,6 +20,11 @@ interface InputProps {
   placeholder: 'Imię' | 'Email' | 'Wiadomość'
 }
 
+interface EncodedData {
+  'form-name': 'contact-form'
+  [key: string]: string
+}
+
 const Input = ({ ...props }: InputProps) => {
   const [field, meta] = useField(props)
 
@@ -46,6 +51,12 @@ const TextArea = ({ ...props }: InputProps) => {
   )
 }
 
+const encode = (data: EncodedData) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 function ContactForm() {
   return (
     <Formik
@@ -66,14 +77,23 @@ function ContactForm() {
           .required('Wymagane'),
       })}
       onSubmit={(values: Values, { setSubmitting, resetForm }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          resetForm()
-          setSubmitting(false)
-        }, 3000)
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact-form', ...values }),
+        })
+          .then(() => {
+            alert('Success')
+            resetForm()
+          })
+          .catch(() => {
+            alert('Error')
+          })
+          .finally(() => setSubmitting(false))
       }}
     >
-      <Form>
+      <Form name="contact-form" data-netlify>
+        <input type="hidden" name="form-name" value="contact" />
         <Input type="text" name="name" placeholder="Imię" />
         <Input type="text" name="email" placeholder="Email" />
         <TextArea name="message" placeholder="Wiadomość" />
