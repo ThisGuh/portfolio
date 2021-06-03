@@ -92,11 +92,12 @@ function ContactForm() {
           .finally(() => setSubmitting(false))
       }}
     >
-      <Form name="contact-form" data-netlify>
+      <Form name="contact-form" data-netlify data-netlify-recaptcha>
         <input type="hidden" name="form-name" value="contact" />
         <Input type="text" name="name" placeholder="Imię" />
         <Input type="text" name="email" placeholder="Email" />
         <TextArea name="message" placeholder="Wiadomość" />
+        <div data-netlify-recaptcha="true"></div>
         <Button text="Wyślij" type="submit" />
       </Form>
     </Formik>
