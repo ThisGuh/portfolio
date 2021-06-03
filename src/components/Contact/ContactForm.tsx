@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Formik, useField } from 'formik'
+import { ToastContainer, toast } from 'react-toastify'
 import {
   StyledInput,
   StyledTextArea,
@@ -83,23 +84,53 @@ function ContactForm() {
           body: encode({ 'form-name': 'contact-form', ...values }),
         })
           .then(() => {
-            alert('Success')
+            toast.info('Wiadomość została wysłana', {
+              position: 'bottom-right',
+              autoClose: 2500,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
             resetForm()
           })
           .catch(() => {
-            alert('Error')
+            toast.info('Błąd: wiadomość nie została wysłana', {
+              position: 'bottom-right',
+              autoClose: 2500,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
           })
           .finally(() => setSubmitting(false))
       }}
     >
-      <Form name="contact-form" data-netlify data-netlify-recaptcha>
-        <input type="hidden" name="form-name" value="contact" />
-        <Input type="text" name="name" placeholder="Imię" />
-        <Input type="text" name="email" placeholder="Email" />
-        <TextArea name="message" placeholder="Wiadomość" />
-        <div data-netlify-recaptcha="true"></div>
-        <Button text="Wyślij" type="submit" />
-      </Form>
+      <>
+        <Form name="contact-form" data-netlify data-netlify-recaptcha>
+          <input type="hidden" name="form-name" value="contact" />
+          <Input type="text" name="name" placeholder="Imię" />
+          <Input type="text" name="email" placeholder="Email" />
+          <TextArea name="message" placeholder="Wiadomość" />
+          <div data-netlify-recaptcha="true"></div>
+          <Button text="Wyślij" type="submit" />
+        </Form>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={2500}
+          limit={1}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </>
     </Formik>
   )
 }
