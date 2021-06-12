@@ -15,7 +15,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/poppins": "^4.3.0",
+    "@fontsource/poppins": "^4.4.5",
     "babel-plugin-styled-components": "^1.12.0",
     "browser-monads-ts": "^1.2.2",
     "formik": "^2.2.8",
