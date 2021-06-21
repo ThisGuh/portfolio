@@ -19,7 +19,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "browser-monads-ts": "^1.2.2",
     "formik": "^2.2.9",
-    "gatsby": "^3.7.1",
+    "gatsby": "^3.7.2",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-styled-components": "^4.7.1",
     "gatsby-source-graphql": "^3.7.1",
