@@ -1,5 +1,5 @@
 import React from 'react'
-import { useReposData } from 'hooks'
+import { useReposData } from 'hooks/useReposData'
 import { PORTFOLIO_TAG } from 'utility/constants'
 import { ProjectContainer } from 'components/About/About.style'
 

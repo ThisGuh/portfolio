@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { window } from 'browser-monads-ts'
+import React, { useRef } from 'react'
 import { Link } from 'react-scroll'
 import {
   HeroContainer,
@@ -13,6 +12,8 @@ import {
   HeroNavListItem,
 } from 'components/Hero/Hero.style'
 import Button from 'components/Button'
+import { useCircleAnimation } from 'hooks/useCircleAnimation'
+import { useHeroHeight } from 'hooks/useHeroHeight'
 import {
   HERO_H1_CONTENT,
   HERO_DESC,
@@ -25,17 +26,9 @@ import GithubIcon from 'icons/github.svg'
 import LinkedinIcon from 'icons/linkedin.svg'
 
 function Hero() {
-  const [heroHeight, setHeroHeight] = useState(0)
-
-  useEffect(() => {
-    const updateHeroHeight = () => {
-      setHeroHeight(window.innerHeight)
-    }
-    updateHeroHeight()
-    window.addEventListener('resize', updateHeroHeight)
-
-    return () => window.removeEventListener('resize', updateHeroHeight)
-  }, [])
+  const heroHeight = useHeroHeight()
+  const HeroCircleRef = useRef(null)
+  useCircleAnimation(HeroCircleRef)
 
   return (
     <HeroContainer style={{ height: heroHeight }}>
@@ -55,7 +48,7 @@ function Hero() {
           ))}
         </HeroNavList>
       </HeroNav>
-      <HeroCircle />
+      <HeroCircle ref={HeroCircleRef} />
       <HeroIconContainer>
         <a href={GITHUB_LINK} target="_blank">
           <GithubIcon />

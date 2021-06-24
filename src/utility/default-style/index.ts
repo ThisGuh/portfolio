@@ -5,6 +5,7 @@ export const defaultStyle = css`
     font-size: 10px;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .Toastify__toast--info {
