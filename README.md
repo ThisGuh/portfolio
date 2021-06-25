@@ -1,6 +1,6 @@
 ## Work in progress
 
-[Live](https://thisguh.github.io/portfolio/)
+[Live](https://vibrant-swanson-ceaa9e.netlify.app/)
 
 ## Getting started
 
@@ -23,6 +23,8 @@ git clone https://github.com/ThisGuh/portfolio.git && npm start
 - TypeScript
 
 - Styled Components
+
+- GSAP
 
 ## License
 
