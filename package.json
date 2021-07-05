@@ -33,7 +33,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@types/node": "^15.12.5",
+    "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
     "@types/react-scroll": "^1.8.2",
