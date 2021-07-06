@@ -35,15 +35,17 @@ function Projects() {
   }
 
   return (
-    <ProjectContainer>
+    <>
       {filteredProjects().map(project => (
-        <a href={project.url} target="_blank" key={project.name}>
-          <h1>{project.name}</h1>
-          <p>{project.description}</p>
-          <span>{project.createdAt.slice(0, 4)}</span>
-        </a>
+        <ProjectContainer key={project.name}>
+          <a href={project.url} target="_blank">
+            <h1>{project.name}</h1>
+            <p>{project.description}</p>
+            <span>{project.createdAt.slice(0, 4)}</span>
+          </a>
+        </ProjectContainer>
       ))}
-    </ProjectContainer>
+    </>
   )
 }
 
