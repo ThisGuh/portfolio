@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import Hero from 'components/Hero'
 import About from 'components/About'
 import Theme from 'components/Theme'
 import Contact from 'components/Contact'
 import Footer from 'components/Footer'
 import LoadingScreen from 'components/LoadingScreen'
+import { TITLE } from 'utility/constants'
 
 function Home() {
   const [isLoaded, setIsLoaded] = useState(true)
@@ -17,6 +19,9 @@ function Home() {
 
   return (
     <Theme>
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       {isLoaded ? (
         <LoadingScreen />
       ) : (

@@ -1,3 +1,4 @@
+export const TITLE = 'Damian Głuch - Portfolio'
 //hero section
 export const HERO_H1_CONTENT = 'Damian Głuch'
 export const HERO_DESC = 'Front-end Developer'
