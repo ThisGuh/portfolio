@@ -4,8 +4,8 @@ export const AboutContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  justify-content: space-between;
+  min-height: 150vh;
 `
 export const AboutH2 = styled.h2`
   color: ${({ theme }) => theme.colors.darkPurple};

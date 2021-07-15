@@ -29,6 +29,7 @@ export const ContactH2 = styled.h2`
   text-align: center;
   color: ${({ theme }) => theme.colors.darkPurple};
   font-size: ${({ theme }) => theme.fontSizes.big};
+  margin-top: 50px;
 `
 
 export const StyledLinkedinIcon = styled(LinkedinIcon)`
