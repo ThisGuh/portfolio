@@ -1,6 +1,6 @@
 ## Work in progress
 
-[Live](https://vibrant-swanson-ceaa9e.netlify.app/)
+[Live](https://portfolio-thisguh.vercel.app/)
 
 ## Getting started
 
