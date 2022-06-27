@@ -22,6 +22,7 @@ declare module 'styled-components' {
       mobile: string
       tablet: string
       desktop: string
+      midDesktop: string
       bigDesktop: string
     }
   }

@@ -2,11 +2,14 @@ import React from 'react'
 import { useReposData } from 'hooks/useReposData'
 import { PORTFOLIO_TAG } from 'utility/constants'
 import { ProjectContainer } from 'components/About/About.style'
+import GithubIcon from 'icons/github.svg'
+import EyeIcon from 'icons/eye.svg'
 
 interface ProjectsProperties {
   name: string
   url: string
   description: string
+  homepageUrl: string
   createdAt: string
   repositoryTopics: {
     nodes: [
@@ -36,15 +39,25 @@ function Projects() {
 
   return (
     <>
-      {filteredProjects().map(project => (
-        <ProjectContainer key={project.name}>
-          <a href={project.url} target="_blank">
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
-            <span>{project.createdAt.slice(0, 4)}</span>
-          </a>
-        </ProjectContainer>
-      ))}
+      {filteredProjects().map(
+        ({ name, url, description, createdAt, homepageUrl }) => (
+          <ProjectContainer key={name}>
+            <h1>{name}</h1>
+            <p>{description}</p>
+            <span>{createdAt.slice(0, 4)}</span>
+            <section>
+              <a href={url} rel="noreferrer" target="_blank">
+                <GithubIcon />
+              </a>
+              {homepageUrl.length > 0 ? (
+                <a href={homepageUrl} rel="noreferrer" target="_blank">
+                  <EyeIcon />
+                </a>
+              ) : null}
+            </section>
+          </ProjectContainer>
+        )
+      )}
     </>
   )
 }

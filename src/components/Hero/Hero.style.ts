@@ -40,14 +40,26 @@ export const HeroDesc = styled.p`
 `
 
 export const HeroCircle = styled.svg`
-  width: 300px;
-  height: 250px;
+  width: 350px;
+  height: 290px;
   align-self: flex-end;
   justify-self: flex-end;
   background-color: ${({ theme }) => theme.colors.lightPurple};
   clip-path: circle(79.6% at 99% 99%);
 
+  @media ${({ theme }) => theme.screenSizes.tablet} {
+    width: 400px;
+    height: 350px;
+    clip-path: circle(76.1% at 79% 86%);
+  }
+
   @media ${({ theme }) => theme.screenSizes.desktop} {
+    width: 500px;
+    height: 400px;
+    clip-path: circle(76.1% at 79% 86%);
+  }
+
+  @media ${({ theme }) => theme.screenSizes.bigDesktop} {
     width: 600px;
     height: 600px;
     clip-path: circle(76.1% at 79% 86%);
@@ -85,4 +97,25 @@ export const HeroNavListItem = styled.li`
   color: ${({ theme }) => theme.colors.darkPurple};
   cursor: pointer;
   margin: 0 25px;
+`
+
+export const HeroImageWrapper = styled.section`
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 25vw;
+  z-index: 1;
+
+  @media ${({ theme }) => theme.screenSizes.desktop} {
+    display: block;
+    max-width: 400px;
+  }
+
+  @media ${({ theme }) => theme.screenSizes.midDesktop} {
+    max-width: 450px;
+  }
+
+  @media ${({ theme }) => theme.screenSizes.bigDesktop} {
+    max-width: 600px;
+  }
 `

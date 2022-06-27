@@ -16,6 +16,7 @@ export const useReposData = () => {
               nodes {
                 name
                 url
+                homepageUrl
                 repositoryTopics(first: 5) {
                   nodes {
                     topic {

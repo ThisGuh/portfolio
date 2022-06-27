@@ -7,6 +7,7 @@ export interface ReposQuery {
             name: string
             url: string
             createdAt: string
+            homepageUrl: string
             description: string
             repositoryTopics: {
               nodes: [

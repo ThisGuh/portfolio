@@ -32,7 +32,7 @@ function Contact() {
       <ContactH2 id="Kontakt">Kontakt</ContactH2>
       <ContactContainer>
         <SocialSection>
-          <a href={LINKEDIN_LINK} target="_blank">
+          <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer">
             <StyledLinkedinIcon />
           </a>
           <ContactEmail onClick={copyToClipboard}>{EMAIL}</ContactEmail>

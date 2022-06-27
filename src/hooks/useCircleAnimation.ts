@@ -10,13 +10,13 @@ export const useCircleAnimation = (ref: Props) => {
 
   useEffect(() => {
     if (circle) {
-      gsap.set(circle, { autoAlpha: 0 })
-      const timeline = gsap.timeline({ defaults: { ease: 'power3.inOut' } })
+      window.scrollTo(0, 0)
+      const timeline = gsap.timeline({ defaults: { ease: 'power1' } })
       timeline.fromTo(
         circle,
-        { x: '+=600' },
-        { duration: 1, x: '-=600', autoAlpha: 1 }
+        { scale: 25, zIndex: 2 },
+        { duration: 1.5, scale: 1, zIndex: 0 }
       )
     }
-  })
+  }, [circle])
 }

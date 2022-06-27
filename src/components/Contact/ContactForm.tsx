@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Formik, useField } from 'formik'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import {
   StyledInput,
   StyledTextArea,
@@ -9,21 +9,10 @@ import {
 import Button from 'components/Button'
 import * as Yup from 'yup'
 
-interface Values {
-  name: string
-  email: string
-  message: string
-}
-
 interface InputProps {
   type?: 'text'
   name: 'name' | 'email' | 'message'
   placeholder: 'Imię' | 'Email' | 'Wiadomość'
-}
-
-interface EncodedData {
-  'form-name': 'contact-form'
-  [key: string]: string
 }
 
 const Input = ({ ...props }: InputProps) => {
@@ -52,12 +41,6 @@ const TextArea = ({ ...props }: InputProps) => {
   )
 }
 
-const encode = (data: EncodedData) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 function ContactForm() {
   return (
     <Formik
@@ -77,59 +60,47 @@ function ContactForm() {
           .max(100, 'Wiadomość nie może być dłuższa niż 100 znaków')
           .required('Wymagane'),
       })}
-      onSubmit={(values: Values, { setSubmitting, resetForm }) => {
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact-form', ...values }),
-        })
-          .then(() => {
-            toast.info('Wiadomość została wysłana', {
-              position: 'bottom-right',
-              autoClose: 2500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            })
-            resetForm()
+      onSubmit={async (values, { resetForm, setSubmitting }) => {
+        try {
+          await fetch('https://formspree.io/f/meqnwppn', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+              Accept: 'application/json',
+            },
           })
-          .catch(() => {
-            toast.error('Błąd: wiadomość nie została wysłana', {
-              position: 'bottom-right',
-              autoClose: 2500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            })
+          toast.info('Wysłano wiadomość :)', {
+            position: 'bottom-right',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
           })
-          .finally(() => setSubmitting(false))
+        } catch {
+          toast.error('Błąd - nie wysłano wiadomości :(', {
+            position: 'bottom-right',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+        } finally {
+          resetForm()
+          setSubmitting(false)
+        }
       }}
     >
       <>
-        <Form name="contact-form" data-netlify data-netlify-recaptcha>
-          <input type="hidden" name="form-name" value="contact" />
+        <Form>
           <Input type="text" name="name" placeholder="Imię" />
           <Input type="text" name="email" placeholder="Email" />
           <TextArea name="message" placeholder="Wiadomość" />
-          <div data-netlify-recaptcha="true"></div>
           <Button text="Wyślij" type="submit" />
         </Form>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={2500}
-          limit={1}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
       </>
     </Formik>
   )

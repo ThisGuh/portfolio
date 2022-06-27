@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-scroll'
+import { StaticImage } from 'gatsby-plugin-image'
 import {
   HeroContainer,
   HeroHeader,
@@ -10,6 +11,7 @@ import {
   HeroNav,
   HeroNavList,
   HeroNavListItem,
+  HeroImageWrapper,
 } from 'components/Hero/Hero.style'
 import Button from 'components/Button'
 import { useCircleAnimation } from 'hooks/useCircleAnimation'
@@ -35,7 +37,7 @@ function Hero() {
       <HeroHeader>
         <HeroH1>{HERO_H1_CONTENT}</HeroH1>
         <HeroDesc>{HERO_DESC}</HeroDesc>
-        <Link to="Kontakt" spy smooth>
+        <Link to="contact" spy smooth>
           <Button text={HERO_BUTTON_CONTENT} />
         </Link>
       </HeroHeader>
@@ -48,12 +50,19 @@ function Hero() {
           ))}
         </HeroNavList>
       </HeroNav>
+      <HeroImageWrapper>
+        <StaticImage
+          src="../../images/hero.png"
+          alt="hero-image"
+          placeholder="blurred"
+        />
+      </HeroImageWrapper>
       <HeroCircle ref={HeroCircleRef} />
       <HeroIconContainer>
-        <a href={GITHUB_LINK} target="_blank">
+        <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
           <GithubIcon />
         </a>
-        <a href={LINKEDIN_LINK} target="_blank">
+        <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer">
           <LinkedinIcon />
         </a>
       </HeroIconContainer>

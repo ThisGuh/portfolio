@@ -1,52 +1,46 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import {
   AboutContainer,
+  AboutSectionContainer,
   AboutH2,
   AboutDescription,
   TechnologiesContainer,
+  TechnologyContainer,
   ProjectsContainer,
 } from 'components/About/About.style'
 import Projects from 'components/About/Projects'
 import { ABOUT_DESC } from 'utility/constants'
-import { useIconsAnimation } from 'hooks/useIconsAnimation'
-import CSSIcon from 'icons/css3.svg'
-import HTMLIcon from 'icons/html5.svg'
-import JSIcon from 'icons/javascript.svg'
-import TSIcon from 'icons/typescript.svg'
-import ReactIcon from 'icons/react-js.svg'
-import GatsbyIcon from 'icons/gatsby.svg'
-import SassIcon from 'icons/sass.svg'
-import StyledComponentsIcon from 'icons/styled-components.svg'
-import GitIcon from 'icons/git.svg'
+import { TECHNOLOGIES } from 'utility/constants/technologies'
 
 function About() {
-  const IconsRef = useRef(null)
-  useIconsAnimation(IconsRef)
-
+  console.log(TECHNOLOGIES[0].icon)
   return (
     <AboutContainer id="O mnie">
-      <AboutH2>O mnie</AboutH2>
-      <AboutDescription>
-        {ABOUT_DESC.map(item => (
-          <p key={item}>{item}</p>
-        ))}
-      </AboutDescription>
-      <AboutH2>Technologie</AboutH2>
-      <TechnologiesContainer ref={IconsRef}>
-        <HTMLIcon />
-        <CSSIcon />
-        <JSIcon />
-        <TSIcon />
-        <ReactIcon />
-        <GatsbyIcon />
-        <SassIcon />
-        <StyledComponentsIcon />
-        <GitIcon />
-      </TechnologiesContainer>
-      <AboutH2 id="Projekty">Projekty</AboutH2>
-      <ProjectsContainer>
-        <Projects />
-      </ProjectsContainer>
+      <AboutSectionContainer>
+        <AboutH2>O mnie</AboutH2>
+        <AboutDescription>
+          {ABOUT_DESC.map(item => (
+            <p key={item}>{item}</p>
+          ))}
+        </AboutDescription>
+      </AboutSectionContainer>
+      <AboutSectionContainer>
+        <AboutH2>Technologie</AboutH2>
+        <TechnologiesContainer>
+          {TECHNOLOGIES.map(({ name, icon }) => (
+            <TechnologyContainer key={name}>
+              {icon()}
+              <p>{name}</p>
+            </TechnologyContainer>
+          ))}
+        </TechnologiesContainer>
+      </AboutSectionContainer>
+      <AboutSectionContainer>
+        <AboutH2 id="Projekty">Projekty</AboutH2>
+        <ProjectsContainer>
+          <Projects />
+        </ProjectsContainer>
+      </AboutSectionContainer>
     </AboutContainer>
   )
 }
