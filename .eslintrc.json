@@ -19,6 +19,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "ignorePatterns": ["gatsby-config.js"],
   "rules": {},
   "settings": {
     "import/resolver": {
