@@ -36,7 +36,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-scroll": "^1.8.4",
     "react-toastify": "^8.1.0",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "eslint-config-standard-react": "^11.0.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
     "gatsby-plugin-root-import": "^2.0.8",
