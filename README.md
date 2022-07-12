@@ -1,4 +1,4 @@
-## Work in progress
+## Portfolio
 
 [Live](https://portfolio-thisguh.vercel.app/)
 
@@ -13,6 +13,10 @@ git clone https://github.com/ThisGuh/portfolio.git && npm start
 
 
 ```
+
+## Features
+
+- Getting repositories from Github API to projects section
 
 ## Technologies
 
